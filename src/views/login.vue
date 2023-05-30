@@ -4,12 +4,13 @@
       <el-main class="left_side">
         <img src="@/assets/img/img9.jpg" alt="img" class="main_img" />
       </el-main>
-      <el-aside width="500px" class="right_side">
+      <el-aside width="30%" class="right_side">
         <el-form
           :model="loginModel"
           ref="formEl"
           :rules="rules"
           style="width: 300px"
+          @keyup.enter.native="onSubmit(formEl)"
         >
           <h3>登录</h3>
           <el-form-item prop="account">
@@ -38,7 +39,7 @@
             </el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="onSubmit(formEl)">登录</el-button>
+            <el-button type="primary"  @click="onSubmit(formEl)">登录</el-button>
           </el-form-item>
         </el-form>
       </el-aside>
@@ -119,7 +120,7 @@ onMounted(() => {
 }
 .right_side {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 </style>
